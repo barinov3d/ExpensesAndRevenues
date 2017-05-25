@@ -7,8 +7,7 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/coin"
-            />
+            android:src="@drawable/coin"/>
     </item>
 
 </layer-list>
