@@ -5,12 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:context="@+id/container"
     tools:context="com.barinov3dgmail.expensesandrevenues.MainActivity">
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="MainActivity"
-        android:gravity="center" />
+        android:textSize="35sp" />
 
 </android.support.design.widget.CoordinatorLayout>
