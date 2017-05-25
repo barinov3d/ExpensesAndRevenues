@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
-    FragmentManager fragmentManager;
+    android.app.FragmentManager fragmentManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,5 +17,6 @@ public class MainActivity extends AppCompatActivity {
 }
 
 public void runSplash(){
-
+    SplashFragment slashFragment = new SplashFragment();
+    fragmentManager.beginTransaction(); //транзакция отображения SplashScreen на экране
 }
