@@ -12,12 +12,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        fragmentManager = getSupportFragmentManager(); //??? or getFragmentManager() ???
+       fragmentManager = getSupportFragmentManager(); //??? or getFragmentManager() ???
+
+        runSplash();
     }
     public void runSplash(){
         SplashFragment splashFragment = new SplashFragment();
-        fragmentManager.beginTransaction()
-        .replace(R.id.container, splashFragment).addToBackStack(null).commit() // в replace передаем идентификатор контейнера и отображаемый фрагмент
+        fragmentManager.beginTransaction().replace(R.id.container, splashFragment).addToBackStack(null).commit() // в replace передаем идентификатор контейнера и отображаемый фрагмент
         ; //транзакция отображения SplashScreen на экране
     }
 }
