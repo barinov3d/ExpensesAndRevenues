@@ -6,17 +6,19 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
-    android.app.FragmentManager fragmentManager;
+    FragmentManager fragmentManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        fragmentManager = getFragmentManager();
+        fragmentManager = getSupportFragmentManager(); //??? or getFragmentManager() ???
+    }
+    public void runSplash(){
+        SplashFragment splashFragment = new SplashFragment();
+        fragmentManager.beginTransaction()
+        .replace(R.id.container, splashFragment).addToBackStack(null).commit() // в replace передаем идентификатор контейнера и отображаемый фрагмент
+        ; //транзакция отображения SplashScreen на экране
     }
 }
 
-public void runSplash(){
-    SplashFragment slashFragment = new SplashFragment();
-    fragmentManager.beginTransaction(); //транзакция отображения SplashScreen на экране
-}

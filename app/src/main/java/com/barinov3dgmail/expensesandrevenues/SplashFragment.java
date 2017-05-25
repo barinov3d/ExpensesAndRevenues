@@ -1,16 +1,15 @@
 package com.barinov3dgmail.expensesandrevenues;
 
 
+import android.icu.util.TimeUnit;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.util.TimeUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class SplashFragment extends Fragment {
 
 
@@ -24,6 +23,20 @@ public class SplashFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_splash, container, false);
+    }
+    class SplashTask extends AsyncTask<Void,Void,Void>{
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            try {
+                Thread.sleep(2);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            getActivity().getSupportFragmentManager().popBackStack();//позволяет обратиться к Fragment менеджеру
+
+            return null;
+        }
     }
 
 }
