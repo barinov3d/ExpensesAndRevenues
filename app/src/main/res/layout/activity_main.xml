@@ -18,7 +18,7 @@
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="189dp"
             android:layout_marginTop="112dp"
             android:orientation="vertical"
             android:visibility="visible">
@@ -27,7 +27,7 @@
                 android:id="@+id/rl_progress_bar_set"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/btn_start"
+                android:layout_below="@+id/btn_1000"
                 android:visibility="visible">
 
                 <ProgressBar
@@ -38,7 +38,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:max="100"
+
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="19dp"
@@ -52,19 +52,88 @@
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@id/pb_horizontal"
                     android:background="@android:color/transparent"
+                    android:gravity="right"
+                    android:paddingRight="20dp" />
+
+                <TextView
+                    android:id="@+id/tv_max_progress_horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/pb_horizontal"
+                    android:layout_alignParentRight="false"
+                    android:background="@android:color/transparent"
                     android:gravity="center" />
 
             </RelativeLayout>
 
             <Button
-                android:id="@+id/btn_start"
+                android:id="@+id/btn_plus100"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="17dp"
+                android:layout_toLeftOf="@+id/btn_plus1000"
+                android:layout_toStartOf="@+id/btn_plus1000"
+                android:onClick="onClickPlus100"
+                android:text="+100р"
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/btn_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/btn_100"
+                android:layout_alignBottom="@+id/btn_100"
+                android:layout_toLeftOf="@+id/btn_100"
+                android:layout_toStartOf="@+id/btn_100"
+                android:onClick="onClick10"
+                android:text="-10р"
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/btn_100"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="15dp"
-                android:onClick="onClick"
-                android:text="Тратим 10% зп"
+                android:onClick="onClick100"
+                android:text="-100р"
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/btn_plus1000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/btn_plus100"
+                android:layout_alignBottom="@+id/btn_plus100"
+                android:layout_centerHorizontal="true"
+                android:onClick="onClickPlus1000"
+                android:text="+1000р"
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/btn_1000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/btn_100"
+                android:layout_alignBottom="@+id/btn_100"
+                android:layout_toEndOf="@+id/btn_100"
+                android:layout_toRightOf="@+id/btn_100"
+                android:onClick="onClick1000"
+                android:text="-1000р"
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/btn_plus5000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/btn_plus1000"
+                android:layout_alignBottom="@+id/btn_plus1000"
+                android:layout_toEndOf="@+id/btn_plus1000"
+                android:layout_toRightOf="@+id/btn_plus1000"
+                android:onClick="onClickPlus5000"
+                android:text="+5000р"
                 android:textSize="25dp" />
 
         </RelativeLayout>
@@ -95,7 +164,7 @@
             android:id="@+id/pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="200dp" />
+            android:layout_marginTop="300dp" />
 
     </android.support.design.widget.CoordinatorLayout>
 
