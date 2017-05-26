@@ -2,16 +2,11 @@ package com.barinov3dgmail.expensesandrevenues.fragment;
 
 import android.content.Context;
 import android.net.Uri;
-//import android.os.Bundle;
-//import android.support.v4.app.Fragment;
-//import android.view.LayoutInflater;
-//import android.view.View;
-//import android.view.ViewGroup;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.app.Fragment;
 
 import com.barinov3dgmail.expensesandrevenues.R;
 
@@ -81,7 +76,7 @@ public class DoneCostFragment extends Fragment {
         }
     }
 
-    @Override
+   /* @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
@@ -90,7 +85,7 @@ public class DoneCostFragment extends Fragment {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
-    }
+    }*/
 
     @Override
     public void onDetach() {
