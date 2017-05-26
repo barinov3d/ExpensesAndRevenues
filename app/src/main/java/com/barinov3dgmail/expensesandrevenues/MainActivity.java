@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
             toolbar.setTitleTextColor(getResources().getColor(R.color.white));
             setSupportActionBar(toolbar);
         }
-
+    }
 
 }
 
