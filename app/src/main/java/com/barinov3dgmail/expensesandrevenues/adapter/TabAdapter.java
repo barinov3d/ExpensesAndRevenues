@@ -21,21 +21,19 @@ public class TabAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-       /* switch (position){
+       switch (position){
             case 0:
                 return new CurrentCostFragment();
-            break;
             case 1:
                 return new DoneCostFragment();
-            break;
             default:
             return null;
-        }*/
-        return null;
+        }
     }
 
     @Override
     public int getCount() {
+
         return numberOfTabs;
     }
 }
