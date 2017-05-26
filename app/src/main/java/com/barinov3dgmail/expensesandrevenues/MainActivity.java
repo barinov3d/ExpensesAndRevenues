@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import android.app.FragmentManager;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
 import com.barinov3dgmail.expensesandrevenues.adapter.TabAdapter;
 
 public class MainActivity extends AppCompatActivity
@@ -15,18 +19,43 @@ public class MainActivity extends AppCompatActivity
 
     FragmentManager fragmentManager;
 
+    private int progress = 0;//
+    private ProgressBar pbHorizontal;//
+    private TextView tvProgressHorizontal;//
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        fragmentManager = getFragmentManager();
+        pbHorizontal = (ProgressBar) findViewById(R.id.pb_horizontal);//
+        tvProgressHorizontal = (TextView) findViewById(R.id.tv_progress_horizontal);//
+                fragmentManager = getFragmentManager();
 
         setUI();
 
 
 }
+    public void onClick(View v) {//
+        progress = progress + 10;
+        postProgress(progress);
+    }
+
+    private void postProgress(int progress) {//
+        String strProgress = String.valueOf(progress) + " %";
+        pbHorizontal.setProgress(progress);
+
+        if (progress == 0) {
+            pbHorizontal.setSecondaryProgress(0);
+        } else {
+            pbHorizontal.setSecondaryProgress(progress + 5);
+        }
+        tvProgressHorizontal.setText(strProgress);
+
+    }
+
+
 
     private void setUI() {
 
