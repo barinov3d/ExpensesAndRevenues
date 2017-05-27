@@ -53,7 +53,8 @@
                     android:layout_alignBottom="@id/pb_horizontal"
                     android:background="@android:color/transparent"
                     android:gravity="right"
-                    android:paddingRight="20dp" />
+                    android:paddingRight="20dp"
+                    android:textColor="@color/white"/>
 
                 <TextView
                     android:id="@+id/tv_max_progress_horizontal"
@@ -62,7 +63,8 @@
                     android:layout_alignBottom="@id/pb_horizontal"
                     android:layout_alignParentRight="false"
                     android:background="@android:color/transparent"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:textColor="@color/white"/>
 
             </RelativeLayout>
 
@@ -191,9 +193,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
-        android:layout_margin="16dp"
         android:layout_weight="1"
-        android:src="@drawable/ic_add_white_24dp"/>
+        android:src="@drawable/ic_add_white_24dp"
+        android:layout_margin="@dimen/fap_margin"/>
 
 
 

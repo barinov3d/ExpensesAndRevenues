@@ -1,6 +1,8 @@
 package com.barinov3dgmail.expensesandrevenues;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,17 +12,20 @@ import android.app.FragmentManager;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.barinov3dgmail.expensesandrevenues.adapter.TabAdapter;
+import com.barinov3dgmail.expensesandrevenues.dialog.AddingTaskDialogFragment;
 
 public class MainActivity extends AppCompatActivity
+        implements AddingTaskDialogFragment.AddingTaskListener
         //implements AllQuestionsFragment.OnFragmentInteractionListener
 {
 
     FragmentManager fragmentManager;
 
     private int progress = 0;//
-    private int maxProgress = 1000;
+    private int maxProgress = 0;
     private ProgressBar pbHorizontal;//
     private TextView tvProgressHorizontal;//
     private TextView tvProgressMaxHorizontal;
@@ -121,6 +126,24 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //DialogFragment addingTaskDialogFragment = new AddingTaskDialogFragment();
+                //addingTaskDialogFragment.show(fragmentManager, "AddingTaskDialogFragment");
+            }
+        });
+    }
+
+            @Override
+            public void onTaskAdded() {
+                Toast.makeText(this, "Task added.", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onTaskAddingCancel() {
+                Toast.makeText(this, "Task adding cancel", Toast.LENGTH_LONG).show();
 
     }
 
