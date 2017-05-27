@@ -17,17 +17,15 @@ import android.widget.Toast;
 import com.barinov3dgmail.expensesandrevenues.adapter.TabAdapter;
 import com.barinov3dgmail.expensesandrevenues.dialog.AddingTaskDialogFragment;
 
-public class MainActivity extends AppCompatActivity
-        implements AddingTaskDialogFragment.AddingTaskListener
-        //implements AllQuestionsFragment.OnFragmentInteractionListener
-{
 
+public class MainActivity extends AppCompatActivity
+{
     FragmentManager fragmentManager;
 
-    private int progress = 0;//
+    private int progress = 0;
     private int maxProgress = 0;
-    private ProgressBar pbHorizontal;//
-    private TextView tvProgressHorizontal;//
+    private ProgressBar pbHorizontal;
+    private TextView tvProgressHorizontal;
     private TextView tvProgressMaxHorizontal;
 
     @Override
@@ -43,35 +41,33 @@ public class MainActivity extends AppCompatActivity
 
         setUI();
 
-//onClickPlus100
 }
-
-    public void onClick(View v, int number) {//
+    public void onClick(View v, int number) {
         if (number>0) progress = progress + number;
         else maxProgress = maxProgress - number;
         postProgress(progress);
         maxProgress(maxProgress);
     }
-    public void onClick10(View v) {//
+    public void onClick10(View v) {
         onClick(findViewById(R.id.btn_10), 10);
     }
-    public void onClick100(View v) {//
+    public void onClick100(View v) {
         onClick(findViewById(R.id.btn_100), 100);
     }
-    public void onClick1000(View v) {//
+    public void onClick1000(View v) {
         onClick(findViewById(R.id.btn_1000), 1000);
     }
-    public void onClickPlus100(View v) {//
+    public void onClickPlus100(View v) {
         onClick(findViewById(R.id.btn_plus100), -100);
     }
-    public void onClickPlus1000(View v) {//
+    public void onClickPlus1000(View v) {
         onClick(findViewById(R.id.btn_plus1000), -1000);
     }
-    public void onClickPlus5000(View v) {//
+    public void onClickPlus5000(View v) {
         onClick(findViewById(R.id.btn_plus5000), -5000);
     }
 
-    private void postProgress(int progress) {//
+    private void postProgress(int progress) {
         String strProgress = String.valueOf(progress) + " руб.";
         String strNegProgress = String.valueOf(progress-maxProgress) + " руб.";
         pbHorizontal.setProgress(progress);
@@ -86,7 +82,7 @@ public class MainActivity extends AppCompatActivity
         tvProgressMaxHorizontal.setText(strProgress);
         else tvProgressMaxHorizontal.setText("уходим в минус "+"-"+strNegProgress);
     }
-    private void maxProgress(int maxProgress) {//
+    private void maxProgress(int maxProgress) {
         String strProgress = String.valueOf(maxProgress) + " руб.";
         tvProgressHorizontal.setText(strProgress);
         pbHorizontal.setMax(maxProgress);
@@ -128,24 +124,15 @@ public class MainActivity extends AppCompatActivity
         });
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
-            @Override
+
             public void onClick(View v) {
-                //DialogFragment addingTaskDialogFragment = new AddingTaskDialogFragment();
-                //addingTaskDialogFragment.show(fragmentManager, "AddingTaskDialogFragment");
+
+                AddingTaskDialogFragment dialog = new AddingTaskDialogFragment();
+                dialog.show(fragmentManager, "custom");
             }
         });
     }
 
-            @Override
-            public void onTaskAdded() {
-                Toast.makeText(this, "Task added.", Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onTaskAddingCancel() {
-                Toast.makeText(this, "Task adding cancel", Toast.LENGTH_LONG).show();
-
-    }
 
 }
 

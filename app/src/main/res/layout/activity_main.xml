@@ -9,11 +9,27 @@
     android:layout_height="match_parent" >
 
     <android.support.design.widget.CoordinatorLayout
-    android:id="@+id/coordinator"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.barinov3dgmail.expensesandrevenues.MainActivity">
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.barinov3dgmail.expensesandrevenues.MainActivity">
 
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="300dp"
+            android:padding="16dp" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="@dimen/fap_margin"
+            android:layout_weight="1"
+            android:src="@drawable/ic_done_white_24dp" />
 
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
@@ -35,12 +51,12 @@
                     style="@android:style/Widget.ProgressBar.Horizontal"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_marginTop="19dp"
                     android:progressDrawable="@drawable/myprogressbar"
 
@@ -54,7 +70,7 @@
                     android:background="@android:color/transparent"
                     android:gravity="right"
                     android:paddingRight="20dp"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/tv_max_progress_horizontal"
@@ -64,7 +80,7 @@
                     android:layout_alignParentRight="false"
                     android:background="@android:color/transparent"
                     android:gravity="center"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white" />
 
             </RelativeLayout>
 
@@ -166,44 +182,25 @@
 
 
         <android.support.design.widget.AppBarLayout
-        android:id="@+id/aap_bar_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >//вкладки
+            android:id="@+id/aap_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">//вкладки
 
             <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"/>
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize" />
 
             <android.support.design.widget.TabLayout
-            android:id="@+id/tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:tabIndicatorColor="@android:color/background_light"
-            app:tabSelectedTextColor="@android:color/background_light"
-            app:tabTextColor="@android:color/background_light"
-            />
-    </android.support.design.widget.AppBarLayout>
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:tabIndicatorColor="@android:color/background_light"
+                app:tabSelectedTextColor="@android:color/background_light"
+                app:tabTextColor="@android:color/background_light" />
+        </android.support.design.widget.AppBarLayout>
 
     </android.support.design.widget.CoordinatorLayout>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_weight="1"
-        android:src="@drawable/ic_add_white_24dp"
-        android:layout_margin="@dimen/fap_margin"/>
-
-
-
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="300dp" />
 
 </FrameLayout>
