@@ -66,6 +66,30 @@
 
             </RelativeLayout>
 
+            <TextView
+                android:id="@+id/tv_setCost"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/btn_plus1000"
+                android:background="@android:color/transparent"
+                android:gravity="right"
+                android:paddingRight="20dp"
+                android:text="Укажите максимум затрат"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/pb_horizontal"
+                android:background="@android:color/transparent"
+                android:gravity="right"
+                android:paddingRight="20dp"
+                android:text="Укажите потраченную сумму"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/btn_plus100"
                 android:layout_width="wrap_content"
@@ -143,14 +167,14 @@
         android:id="@+id/aap_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        > //вкладки
+        >//вкладки
 
-    <android.support.v7.widget.Toolbar
+            <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"/>
 
-        <android.support.design.widget.TabLayout
+            <android.support.design.widget.TabLayout
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
@@ -160,12 +184,24 @@
             />
     </android.support.design.widget.AppBarLayout>
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/pager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="300dp" />
-
     </android.support.design.widget.CoordinatorLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:layout_weight="1"
+        android:src="@drawable/ic_add_white_24dp"/>
+
+
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="300dp" />
 
 </FrameLayout>

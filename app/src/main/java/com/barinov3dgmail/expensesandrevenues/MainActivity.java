@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity
     FragmentManager fragmentManager;
 
     private int progress = 0;//
-    private int maxProgress = 0;
+    private int maxProgress = 1000;
     private ProgressBar pbHorizontal;//
     private TextView tvProgressHorizontal;//
     private TextView tvProgressMaxHorizontal;
@@ -33,41 +33,37 @@ public class MainActivity extends AppCompatActivity
         pbHorizontal = (ProgressBar) findViewById(R.id.pb_horizontal);//
         tvProgressHorizontal = (TextView) findViewById(R.id.tv_progress_horizontal);//
         tvProgressMaxHorizontal = (TextView) findViewById(R.id.tv_max_progress_horizontal);
+        maxProgress(maxProgress);
         fragmentManager = getFragmentManager();
 
         setUI();
 
 //onClickPlus100
 }
-    public void onClick10(View v) {//
-        progress = progress + 10;
+
+    public void onClick(View v, int number) {//
+        if (number>0) progress = progress + number;
+        else maxProgress = maxProgress - number;
         postProgress(progress);
         maxProgress(maxProgress);
+    }
+    public void onClick10(View v) {//
+        onClick(findViewById(R.id.btn_10), 10);
     }
     public void onClick100(View v) {//
-        progress = progress + 100;
-        postProgress(progress);
-        maxProgress(maxProgress);
+        onClick(findViewById(R.id.btn_100), 100);
     }
     public void onClick1000(View v) {//
-        progress = progress + 1000;
-        postProgress(progress);
-        maxProgress(maxProgress);
+        onClick(findViewById(R.id.btn_1000), 1000);
     }
     public void onClickPlus100(View v) {//
-        maxProgress = maxProgress + 100;
-        postProgress(progress);
-        maxProgress(maxProgress);
+        onClick(findViewById(R.id.btn_plus100), -100);
     }
     public void onClickPlus1000(View v) {//
-        maxProgress = maxProgress + 1000;
-        postProgress(progress);
-        maxProgress(maxProgress);
+        onClick(findViewById(R.id.btn_plus1000), -1000);
     }
     public void onClickPlus5000(View v) {//
-        maxProgress = maxProgress + 5000;
-        postProgress(progress);
-        maxProgress(maxProgress);
+        onClick(findViewById(R.id.btn_plus5000), -5000);
     }
 
     private void postProgress(int progress) {//
